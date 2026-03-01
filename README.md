@@ -112,6 +112,4 @@ curl -X POST http://127.0.0.1:5001/rollback \
 
 ---
 
-## AI Tool Disclosure
 
-Claude by Anthropic was used to assist with drafting the written report and document formatting. All laboratory implementation, technical configuration, attack simulation, and evidence capture were carried out personally.
