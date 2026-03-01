@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  larkspur_automation:
+    image: python:3.11-slim
+    container_name: larkspur_automation
+    ports:
+      - "5001:5001"
+    cap_add:
+      - NET_ADMIN
+    # No privileged mode — NET_ADMIN is the only required capability
+    volumes:
+      - /var/ossec/active-response:/active-response:ro
+      - ./app.py:/app.py:ro
+    working_dir: /
+    environment:
+      - FLASK_ENV=production
+      - WAZUH_MANAGER=192.168.60.143
+    command: >
+      bash -c "apt-get update -qq &&
+               apt-get install -y -qq iptables passwd &&
+               pip install flask --quiet &&
+               python app.py"
+    restart: unless-stopped

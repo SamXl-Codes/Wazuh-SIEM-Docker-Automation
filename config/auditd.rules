@@ -1,0 +1,18 @@
+# Larkspur Retail Group — auditd rules
+# File: /etc/audit/rules.d/audit.rules
+# Loaded with: auditctl -R /etc/audit/rules.d/audit.rules
+# Verified with: auditctl -l
+
+# Sudo execution
+-a always,exit -F arch=b64 -S execve -F path=/usr/bin/sudo -k sudo_exec
+
+# User database modifications
+-w /etc/passwd -p wa -k user_modification
+-w /etc/shadow -p wa -k shadow_modification
+
+# SSH daemon configuration changes
+-w /etc/ssh/sshd_config -p wa -k sshd_config_change
+
+# Cron persistence paths
+-w /etc/cron.d/ -p wa -k cron_modification
+-w /etc/crontab -p wa -k cron_modification
