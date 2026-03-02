@@ -1,7 +1,7 @@
 # Wazuh SIEM Docker Automation — Larkspur Retail Group
 
 **Module:** B9CY110 — Communication and Network Security  
-**Assessment:** CA1 — Endpoint Security Assessment (60%)  
+**Assessment:** CA1 — Endpoint Security Assessment  
 **Student:** Samuel Oluwasegun Ogunlusi | 20086108 | DBS MSc Cybersecurity  
 
 ---
